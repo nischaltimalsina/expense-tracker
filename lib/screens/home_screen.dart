@@ -88,18 +88,10 @@ class HomeView extends StatelessWidget {
             style: Theme.of(context).textTheme.headlineSmall,
           ),
           const SizedBox(height: 16),
-          const Text(
+          Text(
             'Track your expenses and manage your finances',
             textAlign: TextAlign.center,
             style: TextStyle(color: Colors.grey),
-          ),
-          const SizedBox(height: 32),
-          ElevatedButton.icon(
-            onPressed: () {
-              // This will be handled by the FAB, but keeping for demo
-            },
-            icon: const Icon(Icons.add),
-            label: const Text('Add Transaction'),
           ),
         ],
       ),

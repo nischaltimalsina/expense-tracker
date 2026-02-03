@@ -10,6 +10,7 @@ class AddTransactionScreen extends StatefulWidget {
 class _AddTransactionScreenState extends State<AddTransactionScreen> {
   final _formKey = GlobalKey<FormState>();
   String _transactionType = 'expense';
+  String? _selectedCategory;
 
   @override
   Widget build(BuildContext context) {
@@ -80,6 +81,7 @@ class _AddTransactionScreenState extends State<AddTransactionScreen> {
                   labelText: 'Category',
                   border: OutlineInputBorder(),
                 ),
+                value: _selectedCategory,
                 items: const [
                   DropdownMenuItem(value: 'food', child: Text('Food')),
                   DropdownMenuItem(value: 'transport', child: Text('Transport')),
@@ -87,7 +89,11 @@ class _AddTransactionScreenState extends State<AddTransactionScreen> {
                   DropdownMenuItem(value: 'utilities', child: Text('Utilities')),
                   DropdownMenuItem(value: 'other', child: Text('Other')),
                 ],
-                onChanged: (value) {},
+                onChanged: (value) {
+                  setState(() {
+                    _selectedCategory = value;
+                  });
+                },
               ),
               const SizedBox(height: 16),
               ListTile(
