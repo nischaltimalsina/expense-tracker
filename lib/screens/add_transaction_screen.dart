@@ -94,6 +94,12 @@ class _AddTransactionScreenState extends State<AddTransactionScreen> {
                     _selectedCategory = value;
                   });
                 },
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Please select a category';
+                  }
+                  return null;
+                },
               ),
               const SizedBox(height: 16),
               ListTile(

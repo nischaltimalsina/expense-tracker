@@ -5,13 +5,11 @@ import '../models/transaction.dart';
 class TransactionItem extends StatelessWidget {
   final Transaction transaction;
   final VoidCallback? onTap;
-  final VoidCallback? onDelete;
 
   const TransactionItem({
     super.key,
     required this.transaction,
     this.onTap,
-    this.onDelete,
   });
 
   @override
